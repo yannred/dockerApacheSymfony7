@@ -1,8 +1,9 @@
 version: '3.5'
 services:
-  docker-php-832:
-    container_name: "docker-php-832"
-    image: docker-php-8.3.2:latest
+  apache-symfony7:
+    container_name: "apache-symfony7"
+    #image: apache-symfony7:latest #for locally usage
+    image: ityannred/apache-symfony7:latest
     ports:
       - "8032:80"
     volumes:
