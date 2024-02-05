@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  docker-php-832:
+    container_name: "docker-php-832"
+    image: docker-php-8.3.2:latest
+    ports:
+      - "8032:80"
+    volumes:
+      - /home/yann/docker/firstFm:/home/web
+    #restart: always
+# ----------------------------------------------------------------------
+# ----------------------------------------------------------------------
+#  NETWORK & VOLUMES
+# ----------------------------------------------------------------------
+# ----------------------------------------------------------------------
+# networks:
+#   internal:
+#     name: internal
+#     driver: bridge
