@@ -9,10 +9,11 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 #COPY "php-conf/php.ini" "/usr/local/etc/php/php.ini"
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
+#Probably not needed for Symfony
 RUN pear config-set php_ini /usr/local/etc/php/php.ini
 RUN pecl config-set php_ini /usr/local/etc/php/php.ini
 
-RUN  apt-get clean && apt-get update && apt-get install -y \
+RUN  apt clean && apt update && apt install -y \
         libmagickwand-dev \
         libyaml-dev \
         libpng-dev \
@@ -37,7 +38,7 @@ RUN  apt-get clean && apt-get update && apt-get install -y \
         gnupg \
         cron \
         python3-pip \
-        && apt-get clean \
+        && apt clean \
         && rm -rf /var/lib/apt/lists/*
 
 ## Php extensions
